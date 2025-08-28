@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <template>
   <div>
     <v-carousel height="100vh" :show-arrows="false" hide-delimiter-background hide-delimiters cycle interval="8000"
@@ -34,7 +35,6 @@ export default {
     slides: [
       { src: require('../assets/1.jpg') },
       { src: require('../assets/2.jpg') },
-      { src: require('../assets/3.jpg') },
       { src: require('../assets/4.jpg') },
       { src: require('../assets/5.jpg') },
       { src: require('../assets/6.jpg') },
