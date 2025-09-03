@@ -7,19 +7,20 @@
         class="text-white text-decoration-none font-weight-light text-h5 text-sm-h4 text-md-h4">МАРС
         Отель</v-app-bar-title>
     </router-link>
-    <router-link to="/hotel" class="text-decoration-none">
-      <div class="hidden-sm-and-down">
+    <v-spacer></v-spacer>
+    <div class="hidden-sm-and-down">
+      <a href="/hotel" class="text-decoration-none">
         <v-btn class="ml-2" variant="text">
           <span class="font-weight-medium text-white">Отель</span>
         </v-btn>
-      </div>
-    </router-link>
+      </a>
+    </div>
     <div v-for="button of buttons" :key="button.id" class="hidden-sm-and-down">
-      <a :href="button.link" v-smooth-scroll="{ duration: 1000 }">
+      <router-link :to="button.link" v-smooth-scroll="{ duration: 1000 }">
         <v-btn class="ml-2" variant="text">
           <span class="font-weight-medium text-white">{{ button.title }}</span>
         </v-btn>
-      </a>
+      </router-link>
     </div>
     <v-spacer></v-spacer>
     <a href="tel:+79095066777" class="text-white font-weight-bold text-h4 text-decoration-none hidden-md-and-down">+7
@@ -34,36 +35,22 @@
     <v-spacer></v-spacer>
   </v-toolbar>
   <v-navigation-drawer v-model="drawer" temporary>
-    <div>
-      <v-row class="pt-8 mx-0 d-inline-block" dense no-gutters>
+    <v-row class="pt-8 mx-0 d-inline-block" dense no-gutters>
+      <div>
         <router-link to="/hotel" class="text-decoration-none">
-          <div class="hidden-sm-and-down">
-            <v-btn class="ml-2" variant="text">
-              <span class="font-weight-medium text-white">Отель</span>
-            </v-btn>
-          </div>
-        </router-link>
-        <router-link to="/apartments" class="text-decoration-none">
-          <div class="hidden-sm-and-down">
-            <v-btn class="ml-2" variant="text">
-              <span class="font-weight-medium text-white">Апартаменты</span>
-            </v-btn>
-          </div>
-        </router-link>
-        <v-btn class="mb-3" variant="text" href="/hotel">
-          <span class="font-weight-light">Отель</span>
-        </v-btn>
-        <v-btn class="d-block" variant="text" href="/apartments">
-          <span class="font-weight-light">Апартаменты</span>
-        </v-btn>
-        <v-divider></v-divider>
-        <div v-for="button of buttons" :key="button.id">
-          <v-btn class="mb-3" variant="text" :href="button.link" v-smooth-scroll="{ duration: 1000 }">
-            <span class="font-weight-light">{{ button.title }}</span>
+          <v-btn class="mb-3" variant="text">
+            <span class="font-weight-light text-grey">Отель</span>
           </v-btn>
-        </div>
-      </v-row>
-    </div>
+        </router-link>
+      </div>
+      <div v-for="button of buttons" :key="button.id">
+        <a :href="button.link" v-smooth-scroll="{ duration: 1000 }" class="text-decoration-none">
+          <v-btn class="mb-3" variant="text">
+            <span class="font-weight-light text-grey">{{ button.title }}</span>
+          </v-btn>
+        </a>
+      </div>
+    </v-row>
   </v-navigation-drawer>
 </template>
 
