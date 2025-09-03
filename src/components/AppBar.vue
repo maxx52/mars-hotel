@@ -65,8 +65,10 @@
 <!--        </v-btn>-->
         <v-divider></v-divider>
         <div v-for="button of buttons" :key="button.id">
-          <v-btn class="mb-3" variant="text" :to="button.link" v-smooth-scroll="{ duration: 1000 }">
-            <span class="font-weight-light">{{ button.title }}</span>
+          <v-btn class="mb-3" variant="text">
+            <router-link :to="button.link" v-smooth-scroll="{ duration: 1000 }">
+              <span class="font-weight-light">{{ button.title }}</span>
+            </router-link>
           </v-btn>
         </div>
       </v-row>
