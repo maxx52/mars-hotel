@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           source: ./dist/**
-          target: /home/siter/web/mars-hotel.ru/public_shtml/, /home/siter/web/mars-hotel.ru/public_html/
+          target: /var/www/mars_hotel_r_usr/data/www/mars-hotel.ru
           strip_components: 1  # Удаляет один уровень каталога (папку dist)
 
       - name: Restart Remote Service
